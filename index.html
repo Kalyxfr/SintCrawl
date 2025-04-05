@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SintCrawl - OSINT Web Crawler Tool</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1081/1081134.png">
+  <meta name="description" content="🚀 SintCrawl - Un crawler web open-source pour l'OSINT ! 🕵️‍♂️.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="https://github.com/Kalyxfr/SintCrawl">SintCrawl</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#features" data-i18n="nav.features">Fonctionnalités</a></li>
+        <li><a href="#demo" data-i18n="nav.demo">Démo</a></li>
+        <li><a href="#download" data-i18n="nav.download">Télécharger</a></li>
+        <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="language-switcher">
+        <button class="lang-btn" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <div class="menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1 data-i18n="hero.title">SintCrawl - L'Explorateur Web OSINT</h1>
+      <p data-i18n="hero.subtitle">Un outil puissant pour extraire automatiquement les informations critiques des sites web</p>
+      <div class="hero-buttons">
+        <a href="https://github.com/Kalyxfr/SintCrawl/releases/download/1.0/SintCrawl.exe" class="btn primary" data-i18n="hero.download">Télécharger</a>
+        <a href="#demo" class="btn secondary" data-i18n="hero.learnMore">En savoir plus</a>
+      </div>
+    </div>
+    <div class="hero-terminal">
+      <div class="terminal-header">
+        <div class="terminal-buttons">
+          <span class="terminal-btn red"></span>
+          <span class="terminal-btn yellow"></span>
+          <span class="terminal-btn green"></span>
+        </div>
+        <div class="terminal-title">terminal</div>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line">$ sintcrawl --target https://example.com</div>
+        <div class="terminal-line loading">Analyse en cours...</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="features" class="features">
+    <h2 class="section-title" data-i18n="features.title">Fonctionnalités</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-envelope"></i></div>
+        <h3 data-i18n="features.email.title">Extraction d'Emails</h3>
+        <p data-i18n="features.email.description">Identifie et extrait tous les emails trouvés sur le site cible avec une précision remarquable.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-sitemap"></i></div>
+        <h3 data-i18n="features.subdomain.title">Détection de Sous-domaines</h3>
+        <p data-i18n="features.subdomain.description">Découvre les sous-domaines associés au domaine principal pour une exploration complète.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-link"></i></div>
+        <h3 data-i18n="features.links.title">Exploration des Liens Internes</h3>
+        <p data-i18n="features.links.description">Cartographie la structure interne du site en suivant et analysant tous les liens.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><i class="fas fa-image"></i></div>
+        <h3 data-i18n="features.images.title">Récupération d'Images</h3>
+        <p data-i18n="features.images.description">Recueille les URLs de toutes les images présentes sur le site pour une analyse approfondie.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="demo" class="demo">
+    <h2 class="section-title" data-i18n="demo.title">Démonstration</h2>
+    <div class="demo-container">
+      <div class="terminal-demo">
+        <div class="terminal-header">
+          <div class="terminal-buttons">
+            <span class="terminal-btn red"></span>
+            <span class="terminal-btn yellow"></span>
+            <span class="terminal-btn green"></span>
+          </div>
+          <div class="terminal-title">demo.sh</div>
+        </div>
+        <div class="terminal-body" id="demo-terminal">
+        </div>
+      </div>
+      <div class="demo-text">
+        <div class="demo-feature active" data-demo="emails">
+          <h3><i class="fas fa-check-circle"></i> <span data-i18n="demo.email.title">Extraction d'Emails</span></h3>
+          <p data-i18n="demo.email.description">SintCrawl analyse chaque page pour extraire les adresses email, même celles qui sont masquées ou obfusquées.</p>
+        </div>
+        <div class="demo-feature" data-demo="subdomains">
+          <h3><i class="fas fa-check-circle"></i> <span data-i18n="demo.subdomain.title">Détection de Sous-domaines</span></h3>
+          <p data-i18n="demo.subdomain.description">Découvrez tous les sous-domaines liés au domaine principal pour une cartographie complète.</p>
+        </div>
+        <div class="demo-feature" data-demo="links">
+          <h3><i class="fas fa-check-circle"></i> <span data-i18n="demo.links.title">Exploration des Liens</span></h3>
+          <p data-i18n="demo.links.description">SintCrawl suit et analyse tous les liens internes pour comprendre la structure du site.</p>
+        </div>
+        <div class="demo-feature" data-demo="images">
+          <h3><i class="fas fa-check-circle"></i> <span data-i18n="demo.images.title">Récupération d'Images</span></h3>
+          <p data-i18n="demo.images.description">Collectez toutes les URLs d'images pour une analyse OSINT approfondie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="use-cases" class="use-cases">
+    <h2 class="section-title" data-i18n="useCases.title">Cas d'Utilisation</h2>
+    <div class="cases-grid">
+      <div class="case-card">
+        <h3 data-i18n="useCases.security.title">Audit de Sécurité</h3>
+        <p data-i18n="useCases.security.description">Identifiez les vulnérabilités potentielles et les fuites d'informations sur vos sites web.</p>
+      </div>
+      <div class="case-card">
+        <h3 data-i18n="useCases.research.title">Recherche OSINT</h3>
+        <p data-i18n="useCases.research.description">Recueillez des données précieuses pour vos investigations en sources ouvertes.</p>
+      </div>
+      <div class="case-card">
+        <h3 data-i18n="useCases.marketing.title">Marketing Digital</h3>
+        <p data-i18n="useCases.marketing.description">Analysez la présence en ligne de vos concurrents et découvrez leurs stratégies.</p>
+      </div>
+      <div class="case-card">
+        <h3 data-i18n="useCases.compliance.title">Conformité RGPD</h3>
+        <p data-i18n="useCases.compliance.description">Vérifiez que votre site web ne divulgue pas d'informations personnelles non protégées.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="download" class="download">
+    <h2 class="section-title" data-i18n="download.title">Télécharger</h2>
+    <div class="download-container">
+      <div class="download-info">
+        <p data-i18n="download.description">SintCrawl est un outil open-source disponible gratuitement sur GitHub. Vous pouvez le télécharger, le modifier et contribuer à son développement.</p>
+        <div class="download-buttons">
+          <a href="https://github.com/Kalyxfr/SintCrawl" class="btn primary" target="_blank">
+            <i class="fab fa-github"></i> <span data-i18n="download.github">GitHub</span>
+          </a>
+          <a href="#" class="btn secondary">
+            <i class="fas fa-book"></i> <span data-i18n="download.documentation">Documentation</span>
+          </a>
+        </div>
+        <div class="installation">
+          <h3 data-i18n="download.installation.title">Installation</h3>
+          <div class="code-block">
+            <code>git clone https://github.com/example/sintcrawl.git</code>
+            <code>cd sintcrawl</code>
+            <code>pip install -r requirements.txt</code>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 class="section-title" data-i18n="contact.title">Contact</h2>
+    <div class="contact-container">
+        <form id="contact-form" class="contact-form" action="mailto:altox1597@gmail.com" method="POST" enctype="text/plain">
+            <div class="form-group">
+                <label for="name" data-i18n="contact.form.name">Nom</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email" data-i18n="contact.form.email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="subject" data-i18n="contact.form.subject">Sujet</label>
+                <select id="subject" name="subject">
+                    <option value="question" data-i18n="contact.form.subjects.question">Question</option>
+                    <option value="feedback" data-i18n="contact.form.subjects.feedback">Retour d'expérience</option>
+                    <option value="bug" data-i18n="contact.form.subjects.bug">Signalement de bug</option>
+                    <option value="feature" data-i18n="contact.form.subjects.feature">Suggestion de fonctionnalité</option>
+                    <option value="other" data-i18n="contact.form.subjects.other">Autre</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="message" data-i18n="contact.form.message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn primary">
+                <i class="fas fa-paper-plane"></i> <span data-i18n="contact.form.submit">Envoyer</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <h3>SintCrawl</h3>
+        <p data-i18n="footer.description">Outil d'exploration web OSINT avancé</p>
+      </div>
+      <div class="footer-links">
+        <h4 data-i18n="footer.links.title">Liens</h4>
+        <ul>
+          <li><a href="#features" data-i18n="footer.links.features">Fonctionnalités</a></li>
+          <li><a href="#demo" data-i18n="footer.links.demo">Démo</a></li>
+          <li><a href="#download" data-i18n="footer.links.download">Télécharger</a></li>
+          <li><a href="#contact" data-i18n="footer.links.contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h4 data-i18n="footer.social.title">Suivez-nous</h4>
+        <div class="social-icons">
+          <a href="https://github.com/Kalyxfr" class="social-icon"><i class="fab fa-github"></i></a>
+          <a href="https://x.com/Discrawler" class="social-icon"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.linkedin.com/in/kalyx-fr-6286ab355/" class="social-icon"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 SintCrawl. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
+    </div>
+  </footer>
+
+  <script src="translations.js"></script>
+  <script src="terminal.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
